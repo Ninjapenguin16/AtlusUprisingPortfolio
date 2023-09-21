@@ -1,0 +1,73 @@
+<html>
+
+<title>Robotics Student Logs</title>
+
+<body>
+
+<style>
+body {
+	background-image: url("RoboLogo.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 40% 65%;
+	background-position: center center;
+}
+</style>
+
+<h1>Robotics Student Sign-in Logs</h1>
+<br>
+<font color="black">
+<b>
+<label for="DateSelection">Log Date:</label>
+<br>
+<input type="date" id="DateSelection" name="DateSelection">
+<button onclick="SubmitDate()">Submit</button>
+
+<br>
+
+<input type="checkbox" id="CheckBox">HTML Outputs
+
+<br>
+<br>
+<br>
+
+<button onclick="StudentList()">Go To Student List</button>
+</b>
+
+<script>
+
+function SubmitDate(){
+
+	var SelectedDate = document.getElementById("DateSelection").value; // gets the value of the date object 
+	
+	var CurPath = window.location.pathname; // Gets the path to this html file
+	
+	while(CurPath[CurPath.length - 1] !== '/') // Removes the file part of the path
+		CurPath = CurPath.slice(0, -1);
+		
+	if(document.getElementById('CheckBox').checked) // Checks if the "HTML Outputs" box is checked
+		window.open(CurPath + "HTMLs/" + SelectedDate + ".html", "_blank"); // Opens the selected HTML log in a new window
+	else
+		window.open(CurPath + "TXTs/" + SelectedDate + ".txt", "_blank"); // Opens the selected HTML log in a new window	
+	
+}
+
+function StudentList(){
+	
+	var CurPathOther = window.location.pathname;
+	// 
+	while(CurPathOther[CurPathOther.length - 1] !== '/') // Goes back 2 directories
+		CurPathOther = CurPathOther.slice(0, -1);
+	CurPathOther = CurPathOther.slice(0, -1);
+	while(CurPathOther[CurPathOther.length - 1] !== '/') // ^^^
+		CurPathOther = CurPathOther.slice(0, -1);
+		
+	window.open(CurPathOther + "IDs.txt", "_blank"); // Opens the input.txt file one directory above
+
+}
+
+
+</script>
+
+</body>
+</html>
