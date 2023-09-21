@@ -1,9 +1,8 @@
 include("autorun/sh_CustomAddon.lua") -- Includes the shared lua file
 
-local CustomAddon_Player = LocalPlayer() -- Sets the player object to the local player
-
 hook.Add("HUDPaint", "CustomAddonHUD", function() -- Paints stuff to the HUD every frame
 
+    local CustomAddon_Player = LocalPlayer() -- Sets the player object to the local player
     local CustomAddon_scrw, CustomAddon_scrh = ScrW(), ScrH() -- Gets the client's resolution
     local CustomAddon_backw = CustomAddon_scrw * 0.25 -- Width of the black box
     local CustomAddon_backh = CustomAddon_scrh * 0.07 -- Height of the black box
