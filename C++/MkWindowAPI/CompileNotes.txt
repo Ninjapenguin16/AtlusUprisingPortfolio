@@ -1,0 +1,4 @@
+Because the program doesn't use Main as the entry point but instead WinMain (or something like that)
+you need to compile the program with one extra flag, here is the full command
+
+g++ -municode -Wall MkWindow.cpp -o MkWindow.exe -lgdi32
