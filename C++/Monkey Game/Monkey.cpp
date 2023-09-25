@@ -93,12 +93,6 @@ bool TouchBanana(){
 	return 0; // Zero means banana was not touched
 }
 
-void Virus(){
-
-	//This is the part where you could potentially put code for a virus to run on a separate thread
-
-}
-
 
 int main(){	
 
